@@ -32,8 +32,8 @@ if st.sidebar.checkbox('Show what the dataframe looks like'):
     st.write('Data description: \n', df.describe())
 
 # Print valid and fraud transactions
-fraud = df[df.Class == 1]
-valid = df[df.Class == 0]
+fraud = df[df['Class'] == 1]
+valid = df[df['Class'] == 0]
 outlier_percentage = (df.Class.value_counts()[1] / df.Class.value_counts()[0]) * 100
 
 if st.sidebar.checkbox('Show fraud and valid transaction details'):
